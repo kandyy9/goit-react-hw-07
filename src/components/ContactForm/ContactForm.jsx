@@ -1,5 +1,5 @@
 import { useDispatch } from "react-redux";
-import { addContact } from "../../redux/contactsSlice";
+import { addContact } from "../../redux/contactsOps";
 import { useId } from "react";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import MaskedInput from "react-text-mask";
@@ -17,7 +17,6 @@ export default function ContactForm() {
 
   const handleSubmit = (values, actions) => {
     const contact = {
-      id: Date.now(),
       name: values.name,
       number: values.number,
     };
